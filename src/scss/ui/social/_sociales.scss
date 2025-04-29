@@ -1,0 +1,15 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:color";
+
+.menu-redes {
+  margin: 4rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  @include m.menu-social(v.$blanco, 2rem);
+
+  @include m.tablet {
+    justify-content: flex-end;
+  }
+}

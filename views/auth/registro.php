@@ -3,26 +3,30 @@
     <h2 class="auth__heading"><?= $titulo ?></h2>
     <p class="auth__texto">Registrate en Dev Webcamp</p>
 
-    <form action="" class="formulario">
+    <?php
+    require_once __DIR__ . '/../templates/alertas.php';
+    ?>
+
+    <form method="POST" action="/registro" class="formulario">
         <div class="formulario__campo">
 
             <label for="nombre" class="formulario__label">Nombre</label>
 
-            <input type="text" name="nombre" id="nombre" class="formulario__input" placeholder="Tu Nombre">
+            <input type="text" name="nombre" id="nombre" class="formulario__input" placeholder="Tu Nombre" value="<?= $usuario->nombre ?>">
 
         </div>
         <div class="formulario__campo">
 
             <label for="apellido" class="formulario__label">Apellido</label>
 
-            <input type="text" name="apellido" id="apellido" class="formulario__input" placeholder="Tu Apellido">
+            <input type="text" name="apellido" id="apellido" class="formulario__input" placeholder="Tu Apellido" value="<?= $usuario->apellido ?>">
 
         </div>
         <div class="formulario__campo">
 
             <label for="email" class="formulario__label">Email</label>
 
-            <input type="email" name="email" id="email" class="formulario__input" placeholder="Tu Email">
+            <input type="email" name="email" id="email" class="formulario__input" placeholder="Tu Email" value="<?= $usuario->email ?>">
 
         </div>
         <div class="formulario__campo">

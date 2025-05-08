@@ -8,6 +8,6 @@ class DashboardController
 {
     public static function index(Router $router)
     {
-        $router->render('dashboard/index', ['titulo' => 'Panel de Administración']);
+        $router->render('admin/dashboard/index', ['titulo' => 'Panel de Administración']);
     }
 }

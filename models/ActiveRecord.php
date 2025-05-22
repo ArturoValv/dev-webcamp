@@ -117,9 +117,9 @@ class ActiveRecord
     }
 
     // Obtener todos los Registros
-    public static function all()
+    public static function all($orden = 'DESC')
     {
-        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC";
+        $query = "SELECT * FROM " . static::$tabla . " ORDER BY id $orden";
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
@@ -141,7 +141,8 @@ class ActiveRecord
     }
 
     //Paginar los Regustros
-    public static function paginar($por_pagina, $offset){
+    public static function paginar($por_pagina, $offset)
+    {
         $query = "SELECT * FROM " . static::$tabla . " ORDER BY id DESC LIMIT $por_pagina offset $offset";
         $resultado = self::consultarSQL($query);
         return $resultado;
@@ -153,6 +154,20 @@ class ActiveRecord
         $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
         $resultado = self::consultarSQL($query);
         return array_shift($resultado);
+    }
+
+    //Busqueda Where con Multiples opciones
+    public static function whereArray($array = [])
+    {
+        $query = "SELECT * FROM " . static::$tabla . " WHERE ";
+
+        foreach ($array as $key => $value) {
+            $query .= "$key = '$value'";
+            $query .= $key !== array_key_last($array) ? " AND " : '';
+        }
+
+        $resultado = self::consultarSQL($query);
+        return $resultado;
     }
 
     //Traer un total de registros

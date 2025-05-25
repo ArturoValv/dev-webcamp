@@ -75,6 +75,14 @@
   text-align: center;
 }
 
+@mixin descripcion-pagina {
+  margin-bottom: 5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: v.$delgada;
+  color: v.$gris-oscuro;
+}
+
 @mixin texto-fluido($min, $max) {
   font-size: clamp($min, -0.8rem + 10vw, $max);
 }

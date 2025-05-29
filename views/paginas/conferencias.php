@@ -6,7 +6,7 @@
         <h3 class="eventos__heading">&lt; Conferencias /></h3>
         <p class="eventos__fecha">Viernes 5 de Octubre</p>
 
-        <div class="eventos__listado slider swiper">
+        <div class="eventos__listado slider swiper" <?php aos_animacion() ?>>
             <div class="swiper-wrapper">
                 <?php foreach ($eventos['conferencias_v'] as $evento) : ?>
                     <?php include __DIR__ . '../..//templates/evento.php' ?>
@@ -18,7 +18,7 @@
         </div>
         <p class="eventos__fecha">Sábado 6 de Octubre</p>
 
-        <div class="eventos__listado">
+        <div class="eventos__listado" <?php aos_animacion() ?>>
             <div class="eventos__listado slider swiper">
                 <div class="swiper-wrapper">
                     <?php foreach ($eventos['conferencias_s'] as $evento) : ?>
@@ -36,7 +36,7 @@
         <h3 class="eventos__heading">&lt; Workshops /></h3>
         <p class="eventos__fecha">Viernes 5 de Octubre</p>
 
-        <div class="eventos__listado slider swiper">
+        <div class="eventos__listado slider swiper" <?php aos_animacion() ?>>
             <div class="swiper-wrapper">
                 <?php foreach ($eventos['workshops_v'] as $evento) : ?>
                     <?php include __DIR__ . '../..//templates/evento.php' ?>
@@ -48,7 +48,7 @@
         </div>
         <p class="eventos__fecha">Sábado 6 de Octubre</p>
 
-        <div class="eventos__listado slider swiper">
+        <div class="eventos__listado slider swiper" <?php aos_animacion() ?>>
             <div class="swiper-wrapper">
                 <?php foreach ($eventos['workshops_s'] as $evento) : ?>
                     <?php include __DIR__ . '../..//templates/evento.php' ?>

@@ -157,7 +157,8 @@ class ActiveRecord
     }
 
     // Retornar los registros por orden
-    public static function ordenar($columna, $orden){
+    public static function ordenar($columna, $orden)
+    {
         $query = "SELECT * FROM " . static::$tabla . " ORDER BY $columna $orden ";
 
         $resultado = self::consultarSQL($query);
@@ -179,9 +180,12 @@ class ActiveRecord
     }
 
     //Traer un total de registros
-    public static function total()
+    public static function total($columna = '', $valor = '')
     {
         $query = "SELECT COUNT(*) FROM " . static::$tabla;
+        if ($columna) {
+            $query .= " WHERE $columna = $valor";
+        }
         $resultado = self::$db->query($query);
         $total = $resultado->fetch_array();
 
